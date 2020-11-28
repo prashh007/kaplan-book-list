@@ -23,7 +23,9 @@ class App extends Component {
   };
 
   handleSave = (book) => {
-    book.publishedDate = new Date().toLocaleDateString();
+    let date = new Date();
+    book.publishedDate = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+    console.log("book", book);
     this.props.addNewBook(book);
   };
   handleonSearch = (query) => {
